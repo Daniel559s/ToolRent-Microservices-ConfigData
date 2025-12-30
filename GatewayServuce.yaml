@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: tool-unique-service
+          uri: lb://tool-unique-service
+          predicates:
+            - Path=/api/tool-unique/**
+        - id: tool-group-service
+          uri: lb://tool-group-service
+          predicates:
+            - Path=/api/tool-group/**
