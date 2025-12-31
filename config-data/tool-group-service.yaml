@@ -12,12 +12,12 @@ eureka:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/tool-rent-db
+    url: jdbc:mysql://localhost:3306/tool-rent-db-tool-group
     username: root
     password: 1234
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     show-sql: false
   security:
     oauth2:
