@@ -11,14 +11,14 @@ eureka:
     prefer-ip-address: true
 
 spring:
-  datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/tool-rent-db-tool-group}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:1234}
-  jpa:
-    hibernate:
-      ddl-auto: ${DDL_AUTO:update}
-    show-sql: ${SHOW_SQL:false}
+  #datasource:
+    #url: jdbc:mysql://localhost:3306/tool-rent-db-customer
+    #username: root
+    #password: 1234
+  #jpa:
+    #hibernate:
+      #ddl-auto: create
+    #show-sql: false
   security:
     oauth2:
       resourceserver:

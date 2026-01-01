@@ -11,17 +11,24 @@ eureka:
     prefer-ip-address: true
 
 spring:
-  datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/tool-rent-db-tool-group}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:1234}
-  jpa:
-    hibernate:
-      ddl-auto: ${DDL_AUTO:update}
-    show-sql: ${SHOW_SQL:false}
+  #datasource:
+    #url: jdbc:mysql://localhost:3306/tool-rent-db-customer
+    #username: root
+    #password: 1234
+  #jpa:
+    #hibernate:
+      #ddl-auto: create
+    #show-sql: false
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: ${KEYCLOAK_ISSUER:http://localhost:9090/realms/ToolRent}
           jwk-set-uri: ${KEYCLOAK_JWK:http://localhost:9090/realms/ToolRent/protocol/openid-connect/certs}
+
+keycloak:
+  admin:
+    server-url: ${KEYCLOAK_SERVER:http://localhost:9090}
+    realm: ${KEYCLOAK_REALM:ToolRent}
+    client-id: ${KEYCLOAK_CLIENT_ID:ToolRentBackend}
+    client-secret: ${KEYCLOAK_CLIENT_SECRET:9pcEeGNSoonMfvrAbuWKwzfiDaFd3kLd}

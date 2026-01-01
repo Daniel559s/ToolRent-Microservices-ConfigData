@@ -7,7 +7,7 @@ eureka:
     register-with-eureka: true
     registry-fetch-interval-seconds: 5
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
   instance:
     hostname: localhost
     prefer-ip-address: true
@@ -39,11 +39,6 @@ spring:
     config:
       uri: http://localhost:8081
 
-
-
-
-
-
 management:
   endpoints:
     web:
@@ -52,7 +47,7 @@ management:
 
 logging:
   level:
-    org.springframework.cloud.gateway: DEBUG
-    org.springframework.cloud.gateway.route: DEBUG
-    com.netflix.discovery: DEBUG
-    org.springframework.cloud.netflix.eureka: DEBUG
+    org.springframework.cloud.gateway: WARN
+    org.springframework.cloud.gateway.route: WARN
+    com.netflix.discovery: WARN
+    org.springframework.cloud.netflix.eureka: WARN
