@@ -44,6 +44,24 @@ spring:
             - Path=/api/customer/**
           filters:
             - RemoveRequestHeader=Cookie
+        - id: kardex-service
+          uri: lb://kardex-service
+          predicates:
+            - Path=/api/kardex/**
+          filters:
+            - RemoveRequestHeader=Cookie
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - RemoveRequestHeader=Cookie
+        - id: generate-report-service
+          uri: lb://generate-report-service
+          predicates:
+            - Path=/api/generate-report/**
+          filters:
+            - RemoveRequestHeader=Cookie
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
     discovery:
